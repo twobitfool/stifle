@@ -16,17 +16,22 @@ Wrap a function, so it is only called (at most) once every X milliseconds.
 
     // Call it like crazy, but it will only fire once per second
     var interval = setInterval(secondHand, 10)
-
-    // Something to stop that annoying little clock
-    function stopIt () {
-      clearInterval(interval)
-
-      // Cancel pending calls, or else it will fire one more time
-      secondHand.cancel()
-    }
 ```
 
+## Cancellation
+
 The wrapped function comes with a `cancel` method to kill and pending future invocations -- useful for shutting it down when a page or component is being unloaded.
+
+
+```javascript
+    // Stop calling the secondHand
+    clearInterval(interval)
+
+    // Cancel pending calls, or else it will fire one more time
+    secondHand.cancel()
+```
+
+## No Extras
 
 To keep it fast and simple, `stifle` does not support:
 * passing parameters
