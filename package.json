@@ -1,6 +1,6 @@
 {
   "name": "stifle",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A very simple way to throttle a function",
   "main": "index.js",
   "repository": "https://github.com/twobitfool/stifle",

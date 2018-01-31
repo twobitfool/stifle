@@ -14,7 +14,6 @@ function stifle (fn, wait) {
     // Check if still "cooling down" from a previous call
     if (timer) {
       called = true;
-      return;
     } else {
       // Start a timer to fire after the `wait` is over
       timer = setTimeout(afterWait, wait);
