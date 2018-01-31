@@ -36,6 +36,23 @@ describe('stifle', function () {
   });
 
 
+  it('should not trigger an extra call after a `cancel`', function (done) {
+    var callCount = 0,
+      wrapper = stifle(function () { callCount++; }, 10);
+
+    wrapper();
+    wrapper(); // This call should get cancelled
+    wrapper.cancel();
+    assert.strictEqual(callCount, 1);
+    wrapper();
+
+    setTimeout(function () {
+      assert.strictEqual(callCount, 2);
+      done();
+    }, 50);
+  });
+
+
   it('should trigger a second wrapper call as soon as possible', function (done) {
     var callCount = 0;
 

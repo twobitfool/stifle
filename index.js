@@ -24,6 +24,7 @@ function stifle (fn, wait) {
 
   // Add a cancel method, to kill and pending calls
   wrapper.cancel = function () {
+    called = false;
     if (timer) clearTimeout(timer)
     timer = undefined
   }
