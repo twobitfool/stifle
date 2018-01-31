@@ -24,9 +24,14 @@ function stifle (fn, wait) {
 
   // Add a cancel method, to kill and pending calls
   wrapper.cancel = function () {
+    // Clear the called flag, or it would fire twice when called again later
     called = false;
-    if (timer) clearTimeout(timer)
-    timer = undefined
+
+    // Turn off the timer, so it won't fire after the wait expires
+    if (timer) {
+      clearTimeout(timer);
+      timer = undefined;
+    }
   }
 
   function afterWait() {
@@ -36,7 +41,7 @@ function stifle (fn, wait) {
     // If it was called during the `wait`, fire it again
     if (called) {
       called = false;
-      wrapper()
+      wrapper();
     }
   }
 
