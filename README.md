@@ -20,7 +20,7 @@ Wrap a function, so it is only called (at most) once every X milliseconds.
 
 ## Cancellation
 
-The wrapped function comes with a `cancel` method to kill and pending future invocations -- useful for shutting it down when a page or component is being unloaded.
+The wrapped function comes with a `cancel` method to kill any pending future invocations -- useful for shutting it down when a page or component is being unloaded.
 
 
 ```javascript
