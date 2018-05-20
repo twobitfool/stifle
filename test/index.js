@@ -1,6 +1,5 @@
-var stifle = require('../index')
-var assert = require('chai').assert
-
+import stifle from '../index.esm'
+import { assert } from 'chai'
 
 describe('stifle', function () {
 
