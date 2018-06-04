@@ -6,3 +6,4 @@ npm-debug.log
 *.orig
 .DS_Store
 *.bak
+index.cjs.js

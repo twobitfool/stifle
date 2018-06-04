@@ -1,7 +1,4 @@
-module.exports = stifle;
-
-
-function stifle (fn, wait) {
+export default function stifle (fn, wait) {
   if (typeof fn !== 'function' || typeof wait !== 'number') {
     throw new Error('stifle(fn, wait) -- expected a function and number of milliseconds, got (' + typeof fn + ', ' + typeof wait + ')');
   }
