@@ -19,7 +19,7 @@ export default function stifle (fn, wait) {
     }
   }
 
-  // Add a cancel method, to kill and pending calls
+  // Add a cancel method, to kill any pending calls
   wrapper.cancel = function () {
     // Clear the called flag, or it would fire twice when called again later
     called = false;
